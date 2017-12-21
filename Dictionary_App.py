@@ -11,12 +11,12 @@ from difflib import get_close_matches
 data = json.load(open("data.json"))
 
 def translate(word):
-	word = word.lower()												# Makes the program case-insensitive. Data in json file in lower case.
+	word = word.lower()					# Makes the program case-insensitive. Data in json file in lower case.
 	if word in data:
 		return data[word]
-	elif word.title() in data: 											# If user entered "texas" this will check for "Texas" as well.
+	elif word.title() in data: 				# If user entered "texas" this will check for "Texas" as well.
 		return data[word.title()]
-	elif word.upper() in data: 											# In case user enters words like USA or NATO
+	elif word.upper() in data: 				# In case user enters words like USA or NATO
 		return data[word.upper()]
 	elif len(get_close_matches(word, data.keys())) > 0:
 		yn = input("Did you mean %s instead? Enter Y if YES or N if NO: " % get_close_matches(word, data.keys())[0]) # First element of the close matches
