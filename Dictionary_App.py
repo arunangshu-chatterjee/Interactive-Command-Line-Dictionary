@@ -1,3 +1,4 @@
+__author__      = "Arunangshu Chatterjee"
 '''
 There can be 3 scenarios:
 1. User input results in an exact match: Meaning of the input is displayed as output.
